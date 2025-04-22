@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "imgSrc": "./assets/SpicySeasonFood.svg",  
+        "title": "SpicySeasonFood",
+        "price": 681
+    },
+    {
+        "id": 2,
+        "imgSrc": "./assets/BeefDumpling.svg",
+        "title": "BeefDumpling",
+        "price": 681
+    },
+    {
+        "id": 3,
+        "imgSrc": "./assets/SpicyInstant.svg",
+        "title": "SpicyInstant",
+        "price": 681
+    },
+    {
+        "id": 4,
+        "imgSrc": "./assets/HealthyNoddles.svg",
+        "title": "HealthyNoddles",
+        "price": 681
+    },
+    {
+        "id": 5,
+        "imgSrc": "./assets/SpicyInstant.svg",
+        "title": "Good food",
+        "price": 681
+    },
+    {
+        "id": 6,
+        "imgSrc": "./assets/SpicySeasonFood.svg",
+        "title": "Great food",
+        "price": 681
+    },
+    {
+        "id": 7,
+        "imgSrc": "./assets/HealthyNoddles.svg",
+        "title": "Cool food",
+        "price": 681
+    },
+    {
+        "id": 8,
+        "imgSrc": "./assets/BeefDumpling.svg",
+        "title": "Hot food",
+        "price": 681
+    },
+    {
+        "id": 9,
+        "imgSrc": "./assets/SpicyInstant.svg",
+        "title": "Good food",
+        "price": 681
+    },
+    {
+        "id": 10,
+        "imgSrc": "./assets/SpicySeasonFood.svg",
+        "title": "Great food",
+        "price": 681
+    },
+    {
+        "id": 11,
+        "imgSrc": "./assets/HealthyNoddles.svg",
+        "title": "Cool food",
+        "price": 681
+    },
+    {
+        "id": 12,
+        "imgSrc": "./assets/BeefDumpling.svg",
+        "title": "Hot food",
+        "price": 681
+    }
+]
