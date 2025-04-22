@@ -62,6 +62,7 @@ function App() {
   const removeTocart = (index) =>{
     setcart((prevcart) => prevcart.filter((_, i)=> i !== index))
   }
+  const countCartItems = cart.reduce((sum, item)=> sum + item.count, 0)
 
   return (
     <main>
@@ -86,8 +87,11 @@ function App() {
         </div>
         
         <div className='openCart'>
-          <button className='openBasket' onClick={()=>setShowSavedProducts(!showSavedProducts)}>{showSavedProducts ? "Close Saved" : "Open Saved"}</button>
-          <span>{}</span>
+          
+          <button className='openBasket' onClick={() => setShowSavedProducts(!showSavedProducts)}>
+            {showSavedProducts ? "Close Saved" : "Open Saved"}
+            <span className="cartCount">{countCartItems}</span>
+          </button>
         </div>
         {
           showSavedProducts && (  
@@ -102,7 +106,9 @@ function App() {
                       cart.map((el, index)=>(
                         <li key={index}>
                           <h3>{el.title}</h3>
-                          <h4>{el.count}</h4>
+                          {el.count > 0 && (
+                            <span className="cartCount">{countCartItems}</span>
+                          )}
                           <nav>
                             <img src={Plus} onClick={()=>increment(el.id)}/>
                             <img src={Minus} onClick={()=>decrement(el.id)}/>
