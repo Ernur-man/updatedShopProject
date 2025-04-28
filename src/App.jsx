@@ -3,6 +3,9 @@ import './App.less'
 import Trash from './assets/Trash.svg'
 import Plus from './assets/add.svg'
 import Minus from './assets/remove.svg'
+import { InputMask } from "primereact/inputmask";
+
+
 
 function App() {
   const [txt, setTxt] = useState('')
@@ -10,6 +13,14 @@ function App() {
   const [products, setProducts] = useState([])
   const [filteredProducts, setfilteredProducts] = useState([])
   const [showSavedProducts, setShowSavedProducts] = useState(false)
+  
+  const [paymentData, setPaymentData] = useState({
+    name: '',
+    cartNumber: '',
+    expiration: '',
+    cvv: ''
+  })
+
 
   useEffect(()=>{
     fetch('/movies.json')
@@ -28,10 +39,6 @@ function App() {
   }
 
   const addTocart = (el) =>{
-    // const checkcartTovalue = cart.some((item)=> item.id === el.id)
-    // if(!checkcartTovalue){
-    //   setcart((prevcart) => [...prevcart, {...el, count: 1}])  
-    // }
     setcart((prevcart)=>{
       const existingItem = prevcart.find((item)=> item.id === el.id)
       if (existingItem){
@@ -64,6 +71,10 @@ function App() {
   }
   const countCartItems = cart.reduce((sum, item)=> sum + item.count, 0)
 
+
+  const addDataUser=()=>{
+    console.log(paymentData)
+  }
   return (
     <main>
         <div className='searchBlock'>
@@ -122,29 +133,29 @@ function App() {
                   
                 </aside>
                 <aside className='Payment'>
-
                   <div>
                     <h2>Cart Details</h2>
                   </div>
-
                   <p>Cart type</p>
                   <nav>
 
                   </nav>
                   <form>
                     <p>Name on cart</p>
-                    <input type="text" placeholder='name'/>
+                    {/* <input type="text" placeholder='name' value={paymentData.name} onChange={(e)=> setPaymentData({...paymentData, name: e.target.value})} required/> */}
+                    <InputMask value={paymentData.name} onChange={(e)=> setPaymentData({...paymentData, name: e.target.value})} mask="user" placeholder="userName"/>
                     <p>Cart Number</p>
-                    <input type="text" placeholder='1111 2222 3333 4444'/>
+                    <InputMask value={paymentData.cartNumber} onChange={(e)=> setPaymentData({...paymentData, cartNumber: e.target.value})} mask="1111-2222-3333-4444" placeholder="1111-2222-3333-4444"/>
                     <div>
                       <nav>
                         <p>Expiration date</p>
-                        <input type="text" placeholder='mm/yy'/>
+                        <InputMask value={paymentData.expiration} onChange={(e)=> setPaymentData({...paymentData, expiration: e.target.value})} mask="01/25" placeholder="04/26"/>
                       </nav>
                       <nav>
                         <p>CVV</p>
-                        <input type="text" placeholder='123' />
+                        <InputMask value={paymentData.cvv} onChange={(e)=> setPaymentData({...paymentData, cvv: e.target.value})} mask="111" placeholder="99-999999"/>
                       </nav>
+                      <button>Buy</button>
                     </div>
                   </form>
                 </aside>  
@@ -159,14 +170,3 @@ function App() {
 }
 
 export default App
-
-
-
-
-
-
-
-
-
-
-

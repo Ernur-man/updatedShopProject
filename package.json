@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "less": "^4.2.2",
+    "primereact": "^10.9.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-input-mask": "^2.0.4",
     "react-router-dom": "^7.4.0"
   },
   "devDependencies": {
